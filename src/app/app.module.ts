@@ -16,8 +16,9 @@ import { TasksModule } from './tasks/tasks.module';
     BrowserModule,
     FormsModule,
     CoreModule,
-    AppRoutingModule,
-    TasksModule
+    TasksModule,
+    // MUST BE LAST
+    AppRoutingModule
   ],
   providers: [
   ],
