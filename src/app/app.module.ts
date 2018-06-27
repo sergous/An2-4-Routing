@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
+import { TasksModule } from './tasks/tasks.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Router } from '@angular/router';
     BrowserModule,
     FormsModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TasksModule
   ],
   providers: [
   ],
