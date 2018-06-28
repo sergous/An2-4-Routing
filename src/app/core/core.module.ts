@@ -1,14 +1,16 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent, PathNotFoundComponent, MessagesComponent } from '.';
+import { AboutComponent, PathNotFoundComponent, MessagesComponent, AuthService } from '.';
 import { MessagesService } from './services/messages.service';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [AboutComponent, PathNotFoundComponent, MessagesComponent],
-  providers: [MessagesService]
+  declarations: [AboutComponent, PathNotFoundComponent, MessagesComponent, LoginComponent],
+  providers: [AuthGuard, AuthService, MessagesService]
 })
 export class CoreModule {
   constructor(
