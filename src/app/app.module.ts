@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
 import { TasksModule } from './tasks/tasks.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TasksModule } from './tasks/tasks.module';
     CoreModule,
     TasksModule,
     // MUST BE LAST
-    AppRoutingModule
+    AppRoutingModule,
+    UsersModule
   ],
   providers: [
   ],
