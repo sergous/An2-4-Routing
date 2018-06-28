@@ -18,9 +18,8 @@ import { UsersModule } from './users/users.module';
     FormsModule,
     CoreModule,
     TasksModule,
-    // MUST BE LAST
-    AppRoutingModule,
-    UsersModule
+    UsersModule,
+    AppRoutingModule, // MUST BE LAST
   ],
   providers: [
   ],

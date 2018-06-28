@@ -1,4 +1,4 @@
 <app-user
-  *ngIf="let user of users$ | async"
+  *ngFor="let user of users$ | async"
   [user]="user">
 </app-user>

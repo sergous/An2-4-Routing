@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsersRoutingModule } from './users-routing.module';
+import { UsersRoutingModule, usersRouterComponents } from './users-routing.module';
 import { FormsModule } from '@angular/forms';
 import { UserComponent, UserArrayService } from '.';
 
@@ -11,7 +11,7 @@ import { UserComponent, UserArrayService } from '.';
     UsersRoutingModule,
     FormsModule
   ],
-  declarations: [UserComponent],
+  declarations: [usersRouterComponents, UserComponent],
   providers: [UserArrayService]
 })
 export class UsersModule { }
