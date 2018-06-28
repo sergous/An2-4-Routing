@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserArrayService } from '../../services/user-array.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/user.model';
 import { Subscription } from 'rxjs';
 
@@ -17,6 +17,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
   constructor(
     private userArrayService: UserArrayService,
     private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -46,10 +47,11 @@ export class UserFormComponent implements OnInit, OnDestroy {
       this.userArrayService.addUser(user);
     }
     this.originalUser = {...this.user};
+    this.goBack();
   }
 
   goBack() {
-    
+    this.router.navigate(['./../../'], { relativeTo: this.route });
   }
 
 }
