@@ -1,12 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './components/about/about.component';
-import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
+import { AboutComponent, PathNotFoundComponent, MessagesComponent } from '.';
+import { MessagesService } from './services/messages.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [AboutComponent, PathNotFoundComponent]
+  declarations: [AboutComponent, PathNotFoundComponent, MessagesComponent],
+  providers: [MessagesService]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreModule
+  ) {
+    if (parentModule) {
+      throw new Error('CoreModule is already loaded. Import it in the AppModule only.')
+    }
+  }
+ }

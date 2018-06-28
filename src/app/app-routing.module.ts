@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent, PathNotFoundComponent } from './core';
+import { AboutComponent, PathNotFoundComponent, MessagesComponent } from './core';
 const routes: Routes = [
     {
         path: 'about',
@@ -10,6 +10,11 @@ const routes: Routes = [
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+    },
+    {
+        path: 'messages',
+        component: MessagesComponent,
+        outlet: 'popup'
     },
     {
         // The router will match this route if the URL requested
