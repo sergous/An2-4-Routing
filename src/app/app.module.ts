@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { TasksModule } from './tasks/tasks.module';
 import { UsersModule } from './users/users.module';
 import { AdminModule } from './admin/admin.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { AdminModule } from './admin/admin.module';
     TasksModule,
     UsersModule,
     AdminModule, 
-    AppRoutingModule // MUST BE LAST,
+    AppRoutingModule, SharedModule // MUST BE LAST,
   ],
   providers: [
   ],
