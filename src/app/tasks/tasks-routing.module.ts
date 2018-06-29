@@ -6,7 +6,19 @@ const routes: Routes = [
   {
     path: 'home',
     component: TaskListComponent,
-    data: { title: 'Task Manager' },
+    data: {
+      title: 'Task Manager',
+      meta: [
+        {
+          name: 'description',
+          content: 'Task Manager application',
+        },
+        {
+          name: 'keywords',
+          content: 'Angular 6 tutorial, SPA application, Routing',
+        },
+      ],
+    },
   },
   {
     path: 'edit/:taskID',
