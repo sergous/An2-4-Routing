@@ -18,21 +18,25 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    data: { title: 'About' },
   },
   {
     path: 'login',
     component: LoginComponent,
+    data: { title: 'Login' },
   },
   {
     path: 'admin',
     canLoad: [AuthGuard],
     loadChildren: 'app/admin/admin.module#AdminModule',
+    data: { title: 'Admin' },
   },
   {
     path: 'users',
     loadChildren: 'app/users/users.module#UsersModule',
     data: {
       preload: false,
+      title: 'Users',
     },
   },
   {
@@ -50,6 +54,9 @@ const routes: Routes = [
     // doesn't match any paths for routes defined in our configuration
     path: '**',
     component: PathNotFoundComponent,
+    data: {
+      title: 'Page not found',
+    },
   },
 ];
 @NgModule({
