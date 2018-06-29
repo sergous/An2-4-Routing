@@ -5,6 +5,7 @@ import {
   PathNotFoundComponent,
   MessagesComponent,
   LoginComponent,
+  AuthGuard,
 } from './core';
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canLoad: [AuthGuard],
     loadChildren: 'app/admin/admin.module#AdminModule',
   },
   {
