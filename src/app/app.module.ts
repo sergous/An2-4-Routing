@@ -7,8 +7,6 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
 import { TasksModule } from './tasks/tasks.module';
-import { UsersModule } from './users/users.module';
-import { AdminModule } from './admin/admin.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -20,9 +18,9 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     CoreModule,
     TasksModule,
-    UsersModule,
-    AdminModule, 
-    AppRoutingModule, SharedModule // MUST BE LAST,
+    SharedModule,
+    AppRoutingModule,  
+    // AppRoutingModule MUST BE LAST,
   ],
   providers: [
   ],

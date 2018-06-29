@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MessagesService } from './core';
 import { Router } from '@angular/router';
-import { SpinnerService } from './shared';
+import { SpinnerService } from './core';
 
 @Component({
   selector: 'app-root',
@@ -13,21 +13,21 @@ export class AppComponent {
     public messagesService: MessagesService,
     private router: Router,
     public spinnerService: SpinnerService
-  ) {
-    
-  }
+  ) {}
   onActivate($event) {
-    console.log('Activated Component', $event)
+    console.log('Activated Component', $event);
   }
   onDeactivate($event) {
-    console.log('Deactivated Component', $event)
+    console.log('Deactivated Component', $event);
   }
   onDisplayMessages(): void {
-    this.router.navigate([{ 
-      outlets: {
-        popup: ['messages']
-      }
-    }])
+    this.router.navigate([
+      {
+        outlets: {
+          popup: ['messages'],
+        },
+      },
+    ]);
     this.messagesService.isDisplayed = true;
   }
- }
+}

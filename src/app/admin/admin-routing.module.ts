@@ -4,7 +4,7 @@ import { AdminComponent, ManageTasksComponent, ManageUsersComponent, AdminDashbo
 import { AuthGuard } from '../core';
 
 const routes: Routes = [{
-  path: 'admin',
+  path: '',
   component: AdminComponent,
   canActivate: [AuthGuard],
   children: [

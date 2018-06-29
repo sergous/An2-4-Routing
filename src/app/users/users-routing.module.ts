@@ -6,7 +6,7 @@ import { CanDeactivateGuard } from '../core';
 export const usersRouterComponents = [UsersComponent, UserListComponent, UserFormComponent];
 
 const routes: Routes = [{
-  path: 'users',
+  path: '',
   component: UsersComponent,
   children: [
     {

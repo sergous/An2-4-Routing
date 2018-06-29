@@ -1,13 +1,34 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent, PathNotFoundComponent, MessagesComponent, AuthService, MessagesService, AuthGuard, DialogService, LoginComponent, CanDeactivateGuard } from '.';
+import {
+  AboutComponent,
+  PathNotFoundComponent,
+  MessagesComponent,
+  AuthService,
+  MessagesService,
+  AuthGuard,
+  DialogService,
+  LoginComponent,
+  CanDeactivateGuard,
+  SpinnerService,
+} from '.';
 
 @NgModule({
-  imports: [
-    CommonModule
+  imports: [CommonModule],
+  declarations: [
+    AboutComponent,
+    PathNotFoundComponent,
+    MessagesComponent,
+    LoginComponent,
   ],
-  declarations: [AboutComponent, PathNotFoundComponent, MessagesComponent, LoginComponent],
-  providers: [AuthGuard, CanDeactivateGuard, AuthService, MessagesService, DialogService]
+  providers: [
+    AuthGuard,
+    CanDeactivateGuard,
+    AuthService,
+    MessagesService,
+    DialogService,
+    SpinnerService,
+  ],
 })
 export class CoreModule {
   constructor(
@@ -16,7 +37,9 @@ export class CoreModule {
     parentModule: CoreModule
   ) {
     if (parentModule) {
-      throw new Error('CoreModule is already loaded. Import it in the AppModule only.')
+      throw new Error(
+        'CoreModule is already loaded. Import it in the AppModule only.'
+      );
     }
   }
 }
