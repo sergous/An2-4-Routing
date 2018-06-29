@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {
+  Routes,
+  RouterModule,
+  ExtraOptions,
+  PreloadAllModules,
+} from '@angular/router';
 import {
   AboutComponent,
   PathNotFoundComponent,
@@ -7,6 +12,12 @@ import {
   LoginComponent,
   AuthGuard,
 } from './core';
+
+const extraOptions: ExtraOptions = {
+  preloadingStrategy: PreloadAllModules,
+  enableTracing: true,
+};
+
 const routes: Routes = [
   {
     path: 'about',
@@ -43,7 +54,7 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, extraOptions)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
